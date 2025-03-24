@@ -20,18 +20,31 @@ Explanation:
 The deck has 4 cells, and each container weighs 3. The total weight of loading all containers is 12, which does not exceed maxWeight
  */
 
-public class Sol1 {
-    static public int maxContainers(int n, int w, int maxWeight) {
-        int count = 0;
-        int totalWeight = 0;
-        for (int i = 1; i <= n * n; i++) {  
-            if (totalWeight + w > maxWeight) {  
-                break;
-            }
-            totalWeight += w;
-            count++;
-        }
-        return count;
+public class leetcode_3492 {
+    // static public int maxContainers(int n, int w, int maxWeight) {
+    //     int count = 0;
+    //     int totalWeight = 0;
+    //     for (int i = 1; i <= n * n; i++) {  
+    //         if (totalWeight + w > maxWeight) {  
+    //             break;
+    //         }
+    //         totalWeight += w;
+    //         count++;
+    //     }
+    //     return count;
+    // }
+
+    // static public int maxContainers(int n, int w, int maxWeight){
+    //     int totalWeight = n*n * w;
+    //     if (totalWeight<maxWeight) {
+    //         return n*n;
+    //     }else{
+    //         return maxWeight / w;
+    //     }
+    // }
+
+    static  public int maxContainers(int n, int w, int maxWeight) {
+        return (n*n > maxWeight/w) ? maxWeight / w : n*n;
     }
 
     public static void main(String[] args) {

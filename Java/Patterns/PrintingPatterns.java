@@ -309,18 +309,141 @@ public class PrintingPatterns {
     }
 
     static void pattern5(int n){
-        for (int row = 0; row <= 2*n-1; row++) {
-            for (int col = 1; col <= row && col<=n; col++) {
-                System.out.print("* ");
+        // for (int row = 1; row <= 2 * n - 1; row++) {
+        //     int totalCols = (row <= n) ? row : (2 * n - row);
+        //     for (int col = 1; col <= totalCols; col++) {
+        //         System.out.print("* ");
+        //     }
+        //     System.out.println();
+        // }
+        for (int row = 1; row <= 2*n-1; row++) {
+            if (row<=n) {  
+                for (int col = 1; col <= row; col++) {
+                    System.out.print("* ");
+                }
+            }else{
+                for (int col = 1; col <= 2 * n - row ; col++) {
+                    System.out.print("* ");
+                }
             }
-            for (int i = n-1; i > n; i--) {
+            System.out.println();
+        }
+    }
+
+    static void pattern6(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space <= n-row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern7(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space < row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = row; col <= n; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern8(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space <= n-row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= 2*row-1; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern9(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space < row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= 2*n-2*row+1; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern10(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space <= n- row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
     }
 
+    static void pattern11(int n){
+        for (int row = 1; row <=n; row++) {
+            for (int space = 1; space < row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = n; col >= row; col--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern12(int n){
+        for (int row = 1; row <= n; row++) {
+            for (int space = 1; space < row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= n - row + 1; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // Lower part of the pattern
+        for (int row = 1; row <= n; row++) {
+            for (int space = 1; space < n - row + 1; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern13(int n){
+        for (int row = 1; row <= n; row++) {
+            // Print leading spaces
+            for (int space = 1; space <= n - row; space++) {
+                System.out.print(" ");
+            }
+
+            // Print stars and spaces for hollow part
+            for (int col = 1; col <= 2 * row - 1; col++) {
+                if (col == 1 || col == 2 * row - 1 || row == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
-        pattern5(5);
+        pattern13(5);
     }
 }
