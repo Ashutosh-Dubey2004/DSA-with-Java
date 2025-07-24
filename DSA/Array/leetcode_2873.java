@@ -17,8 +17,6 @@ Explanation: The value of the triplet (0, 2, 4) is (nums[0] - nums[2]) * nums[4]
 It can be shown that there are no ordered triplets of indices with a value greater than 77. 
  */
 
-import java.util.Arrays;
-
 public class leetcode_2873 {
     static public long maximumTripletValue(int[] nums) {
         int n = nums.length;

@@ -1,8 +1,3 @@
-package DSA.Array;
-
-import java.util.Arrays;
-TLE Error
-
 public class leetcode_4 {
     // static public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     // int m = nums1.length;
